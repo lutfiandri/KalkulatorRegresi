@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Regression;
 
 namespace KalkulatorRegresi
 {
@@ -21,6 +22,13 @@ namespace KalkulatorRegresi
         {
             Input input = new Input(tb_X.Text, tb_Y.Text);
             label_Koef.Text = Output.DoubleArrayToString(input.X);
+
+            if(radio_Linear.Checked)
+            {
+                LinearRegression reg = new LinearRegression(input.X, input.Y);
+                label_Persamaan.Text = reg.Equation;
+                //label_Koef
+            }
         }
     }
 }
