@@ -59,9 +59,9 @@ namespace Regression
         {
             X = x;
             Y = y;
-            n = X.Length;
             x_bar = Numeric.Mean(X);
             y_bar = Numeric.Mean(Y);
+            n = X.Length;
 
             // calculating
             Constants = Calculate();

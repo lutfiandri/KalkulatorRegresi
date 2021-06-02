@@ -21,13 +21,32 @@ namespace KalkulatorRegresi
         private void btn_Hitung_Click(object sender, EventArgs e)
         {
             Input input = new Input(tb_X.Text, tb_Y.Text);
-            label_Koef.Text = Output.DoubleArrayToString(input.X);
+            if(input.X.Length != input.Y.Length)
+            {
+                MessageBox.Show("Banyak X dan Y harus sama!");
+                return;
+            }
+            label_Koef.Text = Output.DoubleArrayToString(input.Y);
 
             if(radio_Linear.Checked)
             {
                 LinearRegression reg = new LinearRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
-                //label_Koef
+            }
+            else if(radio_Power.Checked)
+            {
+                PowerRegression reg = new PowerRegression(input.X, input.Y);
+                label_Persamaan.Text = reg.Equation;
+            }
+            else if(radio_Exp.Checked)
+            {
+                ExponentialRegression reg = new ExponentialRegression(input.X, input.Y);
+                label_Persamaan.Text = reg.Equation;
+            }
+            else if(radio_Poly1.Checked)
+            {
+                PolynomialRegression reg = new PolynomialRegression(input.X, input.Y);
+                label_Persamaan.Text = reg.Equation;
             }
         }
     }

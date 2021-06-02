@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExponentialRegression.cs" />
+    <Compile Include="GaussJordan.cs" />
     <Compile Include="LinearRegression.cs" />
     <Compile Include="Numeric.cs" />
+    <Compile Include="PolynomialRegression.cs" />
+    <Compile Include="PowerRegression.cs" />
     <Compile Include="Regression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
