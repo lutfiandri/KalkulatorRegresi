@@ -28,7 +28,6 @@ namespace Regression
             int size = B.Length;
             for (int i = 0; i < size; ++i)
             {
-                double[] row = A[i];
                 if (B[i] != 0 && A[i][i] != 0)
                 {
                     B[i] = B[i] / A[i][i];

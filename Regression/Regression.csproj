@@ -46,6 +46,8 @@
     <Compile Include="LinearRegression.cs" />
     <Compile Include="Numeric.cs" />
     <Compile Include="PolynomialRegression.cs" />
+    <Compile Include="PolynomialRegression2.cs" />
+    <Compile Include="PolynomialRegression3.cs" />
     <Compile Include="PowerRegression.cs" />
     <Compile Include="Regression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
