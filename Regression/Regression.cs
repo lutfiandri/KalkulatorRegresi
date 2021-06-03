@@ -12,9 +12,9 @@ namespace Regression
         private double[] array_y;
         private Dictionary<string, double> constants;
         private string equation;
-        private int n;
-        private double x_bar; // rata-rata X
-        private double y_bar; // rata-rata Y
+        private readonly int n;
+        private readonly double x_bar; // rata-rata X
+        private readonly double y_bar; // rata-rata Y
 
         public double[] X
         {
