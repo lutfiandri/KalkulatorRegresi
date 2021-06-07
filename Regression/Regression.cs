@@ -81,6 +81,7 @@ namespace Regression
             Constants = Calculate();
             Equation = GetEquation();
             YRegression = F();
+            DeterminationCoef = GetDeterminationCoef();
         }
 
         protected abstract Dictionary<string, double> Calculate();
