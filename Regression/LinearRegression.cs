@@ -35,5 +35,10 @@ namespace Regression
 
             return equation;
         }
+
+        public override double f(double x)
+        {
+            return Constants["a"] + Constants["b"] * x;
+        }
     }
 }

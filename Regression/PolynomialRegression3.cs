@@ -62,5 +62,10 @@ namespace Regression
 
             return (A, B);
         }
+
+        public override double f(double x)
+        {
+            return Constants["a0"] + Constants["a1"] * x + Constants["a2"] * Math.Pow(x, 2) + Constants["a3"] * Math.Pow(x, 3);
+        }
     }
 }
