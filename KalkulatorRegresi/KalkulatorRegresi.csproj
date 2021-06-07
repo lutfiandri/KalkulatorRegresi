@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayHelper.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,7 @@
     </Compile>
     <Compile Include="Input.cs" />
     <Compile Include="InputHistory.cs" />
+    <Compile Include="InputHistoryModel.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
