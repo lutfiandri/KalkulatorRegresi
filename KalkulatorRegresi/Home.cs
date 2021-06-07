@@ -11,9 +11,9 @@ using Regression;
 
 namespace KalkulatorRegresi
 {
-    public partial class FormHome : Form
+    public partial class Home : Form
     {
-        public FormHome()
+        public Home()
         {
             InitializeComponent();
         }
@@ -64,6 +64,11 @@ namespace KalkulatorRegresi
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

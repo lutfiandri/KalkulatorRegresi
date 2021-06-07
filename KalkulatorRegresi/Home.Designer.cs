@@ -1,7 +1,7 @@
 ﻿
 namespace KalkulatorRegresi
 {
-    partial class FormHome
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -46,13 +46,14 @@ namespace KalkulatorRegresi
             this.label6 = new System.Windows.Forms.Label();
             this.label_Persamaan = new System.Windows.Forms.Label();
             this.label_Koef = new System.Windows.Forms.Label();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(17, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 0;
@@ -61,7 +62,7 @@ namespace KalkulatorRegresi
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 44);
+            this.label2.Location = new System.Drawing.Point(18, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 15);
             this.label2.TabIndex = 1;
@@ -70,7 +71,7 @@ namespace KalkulatorRegresi
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 44);
+            this.label3.Location = new System.Drawing.Point(111, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 15);
             this.label3.TabIndex = 2;
@@ -78,7 +79,7 @@ namespace KalkulatorRegresi
             // 
             // tb_X
             // 
-            this.tb_X.Location = new System.Drawing.Point(16, 67);
+            this.tb_X.Location = new System.Drawing.Point(21, 77);
             this.tb_X.Multiline = true;
             this.tb_X.Name = "tb_X";
             this.tb_X.Size = new System.Drawing.Size(79, 299);
@@ -86,7 +87,7 @@ namespace KalkulatorRegresi
             // 
             // tb_Y
             // 
-            this.tb_Y.Location = new System.Drawing.Point(109, 67);
+            this.tb_Y.Location = new System.Drawing.Point(114, 77);
             this.tb_Y.Multiline = true;
             this.tb_Y.Name = "tb_Y";
             this.tb_Y.Size = new System.Drawing.Size(79, 299);
@@ -95,7 +96,7 @@ namespace KalkulatorRegresi
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(211, 44);
+            this.label4.Location = new System.Drawing.Point(216, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 15);
             this.label4.TabIndex = 5;
@@ -105,7 +106,7 @@ namespace KalkulatorRegresi
             // 
             this.radio_Linear.AutoSize = true;
             this.radio_Linear.Checked = true;
-            this.radio_Linear.Location = new System.Drawing.Point(214, 77);
+            this.radio_Linear.Location = new System.Drawing.Point(219, 87);
             this.radio_Linear.Name = "radio_Linear";
             this.radio_Linear.Size = new System.Drawing.Size(171, 19);
             this.radio_Linear.TabIndex = 6;
@@ -116,7 +117,7 @@ namespace KalkulatorRegresi
             // radio_Power
             // 
             this.radio_Power.AutoSize = true;
-            this.radio_Power.Location = new System.Drawing.Point(214, 103);
+            this.radio_Power.Location = new System.Drawing.Point(219, 113);
             this.radio_Power.Name = "radio_Power";
             this.radio_Power.Size = new System.Drawing.Size(196, 19);
             this.radio_Power.TabIndex = 7;
@@ -126,7 +127,7 @@ namespace KalkulatorRegresi
             // radio_Exp
             // 
             this.radio_Exp.AutoSize = true;
-            this.radio_Exp.Location = new System.Drawing.Point(214, 129);
+            this.radio_Exp.Location = new System.Drawing.Point(219, 139);
             this.radio_Exp.Name = "radio_Exp";
             this.radio_Exp.Size = new System.Drawing.Size(222, 19);
             this.radio_Exp.TabIndex = 8;
@@ -136,7 +137,7 @@ namespace KalkulatorRegresi
             // radio_Poly1
             // 
             this.radio_Poly1.AutoSize = true;
-            this.radio_Poly1.Location = new System.Drawing.Point(214, 155);
+            this.radio_Poly1.Location = new System.Drawing.Point(219, 165);
             this.radio_Poly1.Name = "radio_Poly1";
             this.radio_Poly1.Size = new System.Drawing.Size(253, 19);
             this.radio_Poly1.TabIndex = 9;
@@ -146,7 +147,7 @@ namespace KalkulatorRegresi
             // radio_Poly2
             // 
             this.radio_Poly2.AutoSize = true;
-            this.radio_Poly2.Location = new System.Drawing.Point(214, 181);
+            this.radio_Poly2.Location = new System.Drawing.Point(219, 191);
             this.radio_Poly2.Name = "radio_Poly2";
             this.radio_Poly2.Size = new System.Drawing.Size(299, 19);
             this.radio_Poly2.TabIndex = 10;
@@ -156,7 +157,7 @@ namespace KalkulatorRegresi
             // radio_Poly3
             // 
             this.radio_Poly3.AutoSize = true;
-            this.radio_Poly3.Location = new System.Drawing.Point(214, 207);
+            this.radio_Poly3.Location = new System.Drawing.Point(219, 217);
             this.radio_Poly3.Name = "radio_Poly3";
             this.radio_Poly3.Size = new System.Drawing.Size(345, 19);
             this.radio_Poly3.TabIndex = 11;
@@ -165,7 +166,7 @@ namespace KalkulatorRegresi
             // 
             // btn_Hitung
             // 
-            this.btn_Hitung.Location = new System.Drawing.Point(214, 236);
+            this.btn_Hitung.Location = new System.Drawing.Point(219, 246);
             this.btn_Hitung.Name = "btn_Hitung";
             this.btn_Hitung.Size = new System.Drawing.Size(171, 33);
             this.btn_Hitung.TabIndex = 12;
@@ -176,7 +177,7 @@ namespace KalkulatorRegresi
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(211, 287);
+            this.label5.Location = new System.Drawing.Point(216, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 15);
             this.label5.TabIndex = 13;
@@ -185,7 +186,7 @@ namespace KalkulatorRegresi
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(211, 311);
+            this.label6.Location = new System.Drawing.Point(216, 344);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 15);
             this.label6.TabIndex = 14;
@@ -194,7 +195,7 @@ namespace KalkulatorRegresi
             // label_Persamaan
             // 
             this.label_Persamaan.AutoSize = true;
-            this.label_Persamaan.Location = new System.Drawing.Point(354, 287);
+            this.label_Persamaan.Location = new System.Drawing.Point(359, 320);
             this.label_Persamaan.Name = "label_Persamaan";
             this.label_Persamaan.Size = new System.Drawing.Size(11, 15);
             this.label_Persamaan.TabIndex = 15;
@@ -203,17 +204,28 @@ namespace KalkulatorRegresi
             // label_Koef
             // 
             this.label_Koef.AutoSize = true;
-            this.label_Koef.Location = new System.Drawing.Point(354, 311);
+            this.label_Koef.Location = new System.Drawing.Point(359, 344);
             this.label_Koef.Name = "label_Koef";
             this.label_Koef.Size = new System.Drawing.Size(11, 15);
             this.label_Koef.TabIndex = 16;
             this.label_Koef.Text = "-";
             // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(219, 285);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(172, 24);
+            this.btn_Save.TabIndex = 17;
+            this.btn_Save.Text = "Simpan Input X dan Y";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 378);
+            this.ClientSize = new System.Drawing.Size(706, 424);
+            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label_Koef);
             this.Controls.Add(this.label_Persamaan);
             this.Controls.Add(this.label6);
@@ -258,6 +270,7 @@ namespace KalkulatorRegresi
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label_Persamaan;
         private System.Windows.Forms.Label label_Koef;
+        private System.Windows.Forms.Button btn_Save;
     }
 }
 
