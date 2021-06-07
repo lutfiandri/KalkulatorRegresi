@@ -32,31 +32,37 @@ namespace KalkulatorRegresi
             {
                 LinearRegression reg = new LinearRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
+                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
             else if(radio_Power.Checked)
             {
                 PowerRegression reg = new PowerRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
+                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
             else if(radio_Exp.Checked)
             {
                 ExponentialRegression reg = new ExponentialRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
+                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
             else if(radio_Poly1.Checked)
             {
                 PolynomialRegression reg = new PolynomialRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
+                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
             else if (radio_Poly2.Checked)
             {
                 PolynomialRegression reg = new PolynomialRegression2(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
+                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
             else if (radio_Poly3.Checked)
             {
                 PolynomialRegression reg = new PolynomialRegression3(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
+                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
             }
         }
     }
