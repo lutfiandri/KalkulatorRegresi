@@ -13,8 +13,11 @@ namespace KalkulatorRegresi
 {
     public partial class Home : Form
     {
-        public Home()
+        private readonly User user;
+
+        public Home(User user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -69,6 +72,11 @@ namespace KalkulatorRegresi
         private void btn_Save_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            label_LoggedInAs.Text = $"Masuk Sebagai : {user.Username}";
         }
     }
 }

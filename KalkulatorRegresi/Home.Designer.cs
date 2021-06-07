@@ -47,6 +47,7 @@ namespace KalkulatorRegresi
             this.label_Persamaan = new System.Windows.Forms.Label();
             this.label_Koef = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.label_LoggedInAs = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -220,11 +221,23 @@ namespace KalkulatorRegresi
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // FormHome
+            // label_LoggedInAs
+            // 
+            this.label_LoggedInAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_LoggedInAs.Location = new System.Drawing.Point(442, 24);
+            this.label_LoggedInAs.Name = "label_LoggedInAs";
+            this.label_LoggedInAs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_LoggedInAs.Size = new System.Drawing.Size(198, 15);
+            this.label_LoggedInAs.TabIndex = 18;
+            this.label_LoggedInAs.Text = "---";
+            this.label_LoggedInAs.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 424);
+            this.ClientSize = new System.Drawing.Size(657, 424);
+            this.Controls.Add(this.label_LoggedInAs);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label_Koef);
             this.Controls.Add(this.label_Persamaan);
@@ -244,8 +257,9 @@ namespace KalkulatorRegresi
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.Name = "FormHome";
+            this.Name = "Home";
             this.Text = "Kalkulator Regresi";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +285,7 @@ namespace KalkulatorRegresi
         private System.Windows.Forms.Label label_Persamaan;
         private System.Windows.Forms.Label label_Koef;
         private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Label label_LoggedInAs;
     }
 }
 

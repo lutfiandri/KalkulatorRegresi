@@ -44,7 +44,7 @@ namespace KalkulatorRegresi
             this.btn_Register.Location = new System.Drawing.Point(51, 146);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Size = new System.Drawing.Size(286, 34);
-            this.btn_Register.TabIndex = 12;
+            this.btn_Register.TabIndex = 4;
             this.btn_Register.Text = "Register";
             this.btn_Register.UseVisualStyleBackColor = true;
             this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
@@ -54,7 +54,7 @@ namespace KalkulatorRegresi
             this.tb_Password.Location = new System.Drawing.Point(146, 90);
             this.tb_Password.Name = "tb_Password";
             this.tb_Password.Size = new System.Drawing.Size(191, 20);
-            this.tb_Password.TabIndex = 11;
+            this.tb_Password.TabIndex = 2;
             this.tb_Password.UseSystemPasswordChar = true;
             // 
             // tb_Username
@@ -62,7 +62,7 @@ namespace KalkulatorRegresi
             this.tb_Username.Location = new System.Drawing.Point(146, 64);
             this.tb_Username.Name = "tb_Username";
             this.tb_Username.Size = new System.Drawing.Size(191, 20);
-            this.tb_Username.TabIndex = 10;
+            this.tb_Username.TabIndex = 1;
             // 
             // label3
             // 
@@ -106,7 +106,7 @@ namespace KalkulatorRegresi
             this.tb_Password2.Location = new System.Drawing.Point(146, 116);
             this.tb_Password2.Name = "tb_Password2";
             this.tb_Password2.Size = new System.Drawing.Size(191, 20);
-            this.tb_Password2.TabIndex = 14;
+            this.tb_Password2.TabIndex = 3;
             this.tb_Password2.UseSystemPasswordChar = true;
             // 
             // Register
