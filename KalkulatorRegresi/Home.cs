@@ -15,6 +15,7 @@ namespace KalkulatorRegresi
     {
         private readonly User user;
         private Input input;
+        private History history;
 
         public Home(User user)
         {
@@ -41,13 +42,6 @@ namespace KalkulatorRegresi
 
         private void btn_Hitung_Click(object sender, EventArgs e)
         {
-            //input = new Input(tb_X.Text, tb_Y.Text);
-            //if (input.X.Length != input.Y.Length)
-            //{
-            //    MessageBox.Show("Banyak X dan Y harus sama!");
-            //    return;
-            //}
-
             if (!ValidateInput(tb_X.Text, tb_Y.Text)) return;
 
             if (radio_Linear.Checked)
@@ -110,6 +104,16 @@ namespace KalkulatorRegresi
         private void Home_Load(object sender, EventArgs e)
         {
             label_LoggedInAs.Text = $"Masuk Sebagai : {user.Username}";
+        }
+
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            history = new History(user.Id);
+            history.ShowDialog();
+            InputData data = history.data;
+            if (string.IsNullOrWhiteSpace(data.X)) return;
+            tb_X.Text = data.X;
+            tb_Y.Text = data.Y;
         }
     }
 }

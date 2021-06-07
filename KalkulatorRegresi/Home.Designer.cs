@@ -48,6 +48,7 @@ namespace KalkulatorRegresi
             this.label_Koef = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
             this.label_LoggedInAs = new System.Windows.Forms.Label();
+            this.btn_History = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,7 +84,7 @@ namespace KalkulatorRegresi
             this.tb_X.Location = new System.Drawing.Point(21, 77);
             this.tb_X.Multiline = true;
             this.tb_X.Name = "tb_X";
-            this.tb_X.Size = new System.Drawing.Size(79, 299);
+            this.tb_X.Size = new System.Drawing.Size(79, 258);
             this.tb_X.TabIndex = 3;
             // 
             // tb_Y
@@ -91,7 +92,7 @@ namespace KalkulatorRegresi
             this.tb_Y.Location = new System.Drawing.Point(114, 77);
             this.tb_Y.Multiline = true;
             this.tb_Y.Name = "tb_Y";
-            this.tb_Y.Size = new System.Drawing.Size(79, 299);
+            this.tb_Y.Size = new System.Drawing.Size(79, 258);
             this.tb_Y.TabIndex = 4;
             // 
             // label4
@@ -178,7 +179,7 @@ namespace KalkulatorRegresi
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(216, 320);
+            this.label5.Location = new System.Drawing.Point(216, 293);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 15);
             this.label5.TabIndex = 13;
@@ -187,7 +188,7 @@ namespace KalkulatorRegresi
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(216, 344);
+            this.label6.Location = new System.Drawing.Point(216, 317);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 15);
             this.label6.TabIndex = 14;
@@ -196,7 +197,7 @@ namespace KalkulatorRegresi
             // label_Persamaan
             // 
             this.label_Persamaan.AutoSize = true;
-            this.label_Persamaan.Location = new System.Drawing.Point(359, 320);
+            this.label_Persamaan.Location = new System.Drawing.Point(359, 293);
             this.label_Persamaan.Name = "label_Persamaan";
             this.label_Persamaan.Size = new System.Drawing.Size(11, 15);
             this.label_Persamaan.TabIndex = 15;
@@ -205,7 +206,7 @@ namespace KalkulatorRegresi
             // label_Koef
             // 
             this.label_Koef.AutoSize = true;
-            this.label_Koef.Location = new System.Drawing.Point(359, 344);
+            this.label_Koef.Location = new System.Drawing.Point(359, 317);
             this.label_Koef.Name = "label_Koef";
             this.label_Koef.Size = new System.Drawing.Size(11, 15);
             this.label_Koef.TabIndex = 16;
@@ -213,7 +214,7 @@ namespace KalkulatorRegresi
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(219, 285);
+            this.btn_Save.Location = new System.Drawing.Point(21, 341);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(172, 24);
             this.btn_Save.TabIndex = 17;
@@ -232,11 +233,22 @@ namespace KalkulatorRegresi
             this.label_LoggedInAs.Text = "---";
             this.label_LoggedInAs.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // btn_History
+            // 
+            this.btn_History.Location = new System.Drawing.Point(21, 371);
+            this.btn_History.Name = "btn_History";
+            this.btn_History.Size = new System.Drawing.Size(172, 23);
+            this.btn_History.TabIndex = 19;
+            this.btn_History.Text = "Riwayat Input";
+            this.btn_History.UseVisualStyleBackColor = true;
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 424);
+            this.Controls.Add(this.btn_History);
             this.Controls.Add(this.label_LoggedInAs);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label_Koef);
@@ -286,6 +298,7 @@ namespace KalkulatorRegresi
         private System.Windows.Forms.Label label_Koef;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label_LoggedInAs;
+        private System.Windows.Forms.Button btn_History;
     }
 }
 
