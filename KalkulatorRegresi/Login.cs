@@ -31,7 +31,7 @@ namespace KalkulatorRegresi
         {
             if (tb_Username.Text == "" || tb_Password.Text == "")
             {
-                MessageBox.Show("Ketiga input tidak boleh kosong!");
+                MessageBox.Show("Kedua input tidak boleh kosong!");
                 return;
             }
 
