@@ -45,11 +45,39 @@ namespace KalkulatorRegresi
             return true;
         }
 
+        private void ShowResult(RegressionBase reg)
+        {
+            label_Persamaan.Text = reg.Equation;
+            label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+        }
+
+        private void PlotRegression(RegressionBase reg)
+        {
+            pv.Model = new PlotModel();
+            var dots = new LineSeries()
+            {
+                Color = OxyColors.Blue,
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 5,
+                //MarkerStroke = OxyColors.White,
+                MarkerFill = OxyColors.Blue,
+                MarkerStrokeThickness = 0,
+                LineStyle = LineStyle.None
+            };
+
+            for (int i = 0; i < reg.N; i++)
+            {
+                dots.Points.Add(new DataPoint(reg.X[i], reg.Y[i]));
+            }
+            pv.Model.Series.Add(dots);
+
+            pv.Model.Series.Add(new FunctionSeries(reg.f, reg.X.Min(), reg.X.Max(), 0.1, reg.Equation));
+        }
+
         private void btn_Hitung_Click(object sender, EventArgs e)
         {
             if (!ValidateInput(tb_X.Text, tb_Y.Text)) return;
 
-            // CALCULATING
             if (radio_Linear.Checked)
             {
                 reg = new LinearRegression(input.X, input.Y);
@@ -75,30 +103,8 @@ namespace KalkulatorRegresi
                 reg = new PolynomialRegression3(input.X, input.Y);
             }
 
-            // SHOWING TEXT INFO
-            label_Persamaan.Text = reg.Equation;
-            label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-
-            // PLOTTING
-            pv.Model = new PlotModel();
-            var dots = new LineSeries()
-            {
-                Color = OxyColors.Blue,
-                MarkerType = MarkerType.Circle,
-                MarkerSize = 5,
-                //MarkerStroke = OxyColors.White,
-                MarkerFill = OxyColors.Blue,
-                MarkerStrokeThickness = 0,
-                LineStyle = LineStyle.None
-            };
-
-            for (int i = 0; i < reg.N; i++)
-            {
-                dots.Points.Add(new DataPoint(reg.X[i], reg.Y[i]));
-            }
-            pv.Model.Series.Add(dots);
-
-            pv.Model.Series.Add(new FunctionSeries(reg.f, reg.X.Min(), reg.X.Max(), 0.1, reg.Equation));
+            ShowResult(reg);
+            PlotRegression(reg);
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
