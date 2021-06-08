@@ -15,7 +15,6 @@ namespace KalkulatorRegresi
             InputHistories = new HashSet<InputHistory>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

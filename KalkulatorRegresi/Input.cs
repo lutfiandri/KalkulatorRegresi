@@ -34,7 +34,7 @@ namespace KalkulatorRegresi
         public static double[] MultilineToDoubleArray(string text)
         {
             // Anticipate blank input
-            string trimmedText = text.Replace(" ", "");
+            string trimmedText = text.Trim('\r', '\n').Replace(" ", string.Empty);
             if (trimmedText == "") return new double[] { };
 
             // Allow decimal separator . or ,

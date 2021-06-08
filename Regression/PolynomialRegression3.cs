@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Regression
 {
-    public class PolynomialRegression3 : PolynomialRegression
+    public class PolynomialRegression3 : RegressionBase
     {
         public PolynomialRegression3(double[] x, double[] y) : base(x, y)
         { }

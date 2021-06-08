@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Regression
 {
-    public abstract class Regression : ILineAnalyze, ILineFunction
+    public class RegressionBase : ILineAnalyze, ILineFunction
     {
         private double[] array_x;
         private double[] array_y;
@@ -69,7 +69,7 @@ namespace Regression
             get { return y_bar; }
         }
 
-        public Regression(double[] x, double[] y)
+        public RegressionBase(double[] x, double[] y)
         {
             X = x;
             Y = y;
@@ -84,11 +84,31 @@ namespace Regression
             DeterminationCoef = GetDeterminationCoef();
         }
 
-        protected abstract Dictionary<string, double> Calculate();
+        protected virtual Dictionary<string, double> Calculate()
+        {
+            return new Dictionary<string, double>();
+        }
 
-        protected abstract string GetEquation();
+        protected virtual string GetEquation()
+        {
+            return "";
+        }
 
-        public abstract double f(double x);
+        public virtual double f(double x)
+        {
+            return x;
+        }
+
+        protected virtual (double[][], double[]) GetMatrix()
+        {
+            double[][] A = {
+                new double[] {},
+            };
+
+            double[] B = {};
+
+            return (A, B);
+        }
 
         public double[] F()
         {

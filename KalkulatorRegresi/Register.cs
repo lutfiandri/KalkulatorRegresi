@@ -35,6 +35,13 @@ namespace KalkulatorRegresi
 
             using (var db = new UserModel())
             {
+                var query = from user in db.Users where user.Username == tb_Username.Text select user;
+                if (query.Count() > 0)
+                {
+                    MessageBox.Show("Username telah digunakah. Gunakan username lain.");
+                    return;
+                }
+
                 user = new User()
                 {
                     Username = tb_Username.Text,

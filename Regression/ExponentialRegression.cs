@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Regression
 {
-    public class ExponentialRegression : Regression
+    public class ExponentialRegression : RegressionBase
     {
         public ExponentialRegression(double[] x, double[] y) : base(x, y)
         { }
