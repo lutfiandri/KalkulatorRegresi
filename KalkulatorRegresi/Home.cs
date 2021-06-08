@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OxyPlot;
+using OxyPlot.Series;
 using Regression;
 
 namespace KalkulatorRegresi
@@ -46,41 +48,66 @@ namespace KalkulatorRegresi
         {
             if (!ValidateInput(tb_X.Text, tb_Y.Text)) return;
 
+            pv.Model = new PlotModel();
+            var s1 = new LineSeries()
+            {
+                Color = OxyColors.Blue,
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 5,
+                //MarkerStroke = OxyColors.White,
+                MarkerFill = OxyColors.Blue,
+                MarkerStrokeThickness = 0,
+                LineStyle = LineStyle.None
+            };
+
             if (radio_Linear.Checked)
             {
                 LinearRegression reg = new LinearRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
             }
             else if(radio_Power.Checked)
             {
                 PowerRegression reg = new PowerRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
             }
             else if(radio_Exp.Checked)
             {
                 ExponentialRegression reg = new ExponentialRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
             }
             else if(radio_Poly1.Checked)
             {
                 PolynomialRegression reg = new PolynomialRegression(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
             }
             else if (radio_Poly2.Checked)
             {
                 PolynomialRegression reg = new PolynomialRegression2(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
             }
             else if (radio_Poly3.Checked)
             {
                 PolynomialRegression reg = new PolynomialRegression3(input.X, input.Y);
                 label_Persamaan.Text = reg.Equation;
                 label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+                
+                for (int i = 0; i < reg.N; i++)
+                {
+                    s1.Points.Add(new DataPoint(reg.X[i], reg.Y[i]));
+                }
+                pv.Model.Series.Add(s1);
+
+                pv.Model.Series.Add(new FunctionSeries(reg.f, reg.X.Min(), reg.X.Max(), 0.1, reg.Equation));
             }
         }
 

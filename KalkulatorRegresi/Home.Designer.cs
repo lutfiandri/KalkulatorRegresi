@@ -49,6 +49,7 @@ namespace KalkulatorRegresi
             this.btn_Save = new System.Windows.Forms.Button();
             this.label_LoggedInAs = new System.Windows.Forms.Label();
             this.btn_History = new System.Windows.Forms.Button();
+            this.pv = new OxyPlot.WindowsForms.PlotView();
             this.SuspendLayout();
             // 
             // label1
@@ -225,7 +226,7 @@ namespace KalkulatorRegresi
             // label_LoggedInAs
             // 
             this.label_LoggedInAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_LoggedInAs.Location = new System.Drawing.Point(442, 24);
+            this.label_LoggedInAs.Location = new System.Drawing.Point(852, 24);
             this.label_LoggedInAs.Name = "label_LoggedInAs";
             this.label_LoggedInAs.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label_LoggedInAs.Size = new System.Drawing.Size(198, 15);
@@ -243,11 +244,24 @@ namespace KalkulatorRegresi
             this.btn_History.UseVisualStyleBackColor = true;
             this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
             // 
+            // pv
+            // 
+            this.pv.Location = new System.Drawing.Point(618, 54);
+            this.pv.Name = "pv";
+            this.pv.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.pv.Size = new System.Drawing.Size(432, 340);
+            this.pv.TabIndex = 20;
+            this.pv.Text = "Plot View";
+            this.pv.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.pv.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.pv.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 424);
+            this.ClientSize = new System.Drawing.Size(1079, 424);
+            this.Controls.Add(this.pv);
             this.Controls.Add(this.btn_History);
             this.Controls.Add(this.label_LoggedInAs);
             this.Controls.Add(this.btn_Save);
@@ -299,6 +313,7 @@ namespace KalkulatorRegresi
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label_LoggedInAs;
         private System.Windows.Forms.Button btn_History;
+        private OxyPlot.WindowsForms.PlotView pv;
     }
 }
 
