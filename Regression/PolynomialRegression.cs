@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Regression
 {
-    public class PolynomialRegression : Regression
+    public class PolynomialRegression : RegressionBase
     {
         public PolynomialRegression(double[] x, double[] y) : base(x, y)
         { }
@@ -33,7 +33,7 @@ namespace Regression
             return equation;
         }
 
-        protected virtual (double[][], double[]) GetMatrix()
+        protected override (double[][], double[]) GetMatrix()
         {
             double sx = Numeric.Sum(X);
             double sx2 = Numeric.Sum(Numeric.Pow(X, 2));

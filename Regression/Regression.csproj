@@ -51,7 +51,7 @@
     <Compile Include="PolynomialRegression2.cs" />
     <Compile Include="PolynomialRegression3.cs" />
     <Compile Include="PowerRegression.cs" />
-    <Compile Include="Regression.cs" />
+    <Compile Include="RegressionBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

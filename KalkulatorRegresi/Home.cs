@@ -19,6 +19,7 @@ namespace KalkulatorRegresi
         private readonly bool isAnonymous;
         private Input input;
         private History history;
+        public RegressionBase reg;
 
         public Home(User user, bool isAnonymous=false)
         {
@@ -48,8 +49,39 @@ namespace KalkulatorRegresi
         {
             if (!ValidateInput(tb_X.Text, tb_Y.Text)) return;
 
+            // CALCULATING
+            if (radio_Linear.Checked)
+            {
+                reg = new LinearRegression(input.X, input.Y);
+            }
+            else if(radio_Power.Checked)
+            {
+                reg = new PowerRegression(input.X, input.Y);
+            }
+            else if(radio_Exp.Checked)
+            {
+                reg = new ExponentialRegression(input.X, input.Y);
+            }
+            else if(radio_Poly1.Checked)
+            {
+                reg = new PolynomialRegression(input.X, input.Y);
+            }
+            else if (radio_Poly2.Checked)
+            {
+                reg = new PolynomialRegression2(input.X, input.Y);
+            }
+            else if (radio_Poly3.Checked)
+            {
+                reg = new PolynomialRegression3(input.X, input.Y);
+            }
+
+            // SHOWING TEXT INFO
+            label_Persamaan.Text = reg.Equation;
+            label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
+
+            // PLOTTING
             pv.Model = new PlotModel();
-            var s1 = new LineSeries()
+            var dots = new LineSeries()
             {
                 Color = OxyColors.Blue,
                 MarkerType = MarkerType.Circle,
@@ -60,55 +92,13 @@ namespace KalkulatorRegresi
                 LineStyle = LineStyle.None
             };
 
-            if (radio_Linear.Checked)
+            for (int i = 0; i < reg.N; i++)
             {
-                LinearRegression reg = new LinearRegression(input.X, input.Y);
-                label_Persamaan.Text = reg.Equation;
-                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
+                dots.Points.Add(new DataPoint(reg.X[i], reg.Y[i]));
             }
-            else if(radio_Power.Checked)
-            {
-                PowerRegression reg = new PowerRegression(input.X, input.Y);
-                label_Persamaan.Text = reg.Equation;
-                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
-            }
-            else if(radio_Exp.Checked)
-            {
-                ExponentialRegression reg = new ExponentialRegression(input.X, input.Y);
-                label_Persamaan.Text = reg.Equation;
-                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
-            }
-            else if(radio_Poly1.Checked)
-            {
-                PolynomialRegression reg = new PolynomialRegression(input.X, input.Y);
-                label_Persamaan.Text = reg.Equation;
-                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
-            }
-            else if (radio_Poly2.Checked)
-            {
-                PolynomialRegression reg = new PolynomialRegression2(input.X, input.Y);
-                label_Persamaan.Text = reg.Equation;
-                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-                pv.Model.Series.Add(new FunctionSeries(reg.f, 0, 10, 0.1, reg.Equation));
-            }
-            else if (radio_Poly3.Checked)
-            {
-                PolynomialRegression reg = new PolynomialRegression3(input.X, input.Y);
-                label_Persamaan.Text = reg.Equation;
-                label_Koef.Text = Convert.ToString(reg.DeterminationCoef);
-                
-                for (int i = 0; i < reg.N; i++)
-                {
-                    s1.Points.Add(new DataPoint(reg.X[i], reg.Y[i]));
-                }
-                pv.Model.Series.Add(s1);
+            pv.Model.Series.Add(dots);
 
-                pv.Model.Series.Add(new FunctionSeries(reg.f, reg.X.Min(), reg.X.Max(), 0.1, reg.Equation));
-            }
+            pv.Model.Series.Add(new FunctionSeries(reg.f, reg.X.Min(), reg.X.Max(), 0.1, reg.Equation));
         }
 
         private void btn_Save_Click(object sender, EventArgs e)

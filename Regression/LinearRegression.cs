@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Regression
 {
-    public class LinearRegression : Regression
+    public class LinearRegression : RegressionBase
     {
         public LinearRegression(double[] x, double[] y) : base(x, y)
         { }
