@@ -90,10 +90,6 @@ namespace KalkulatorRegresi
             {
                 reg = new ExponentialRegression(input.X, input.Y);
             }
-            else if(radio_Poly1.Checked)
-            {
-                reg = new PolynomialRegression(input.X, input.Y);
-            }
             else if (radio_Poly2.Checked)
             {
                 reg = new PolynomialRegression2(input.X, input.Y);

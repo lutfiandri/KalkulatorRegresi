@@ -11,10 +11,10 @@ namespace KalkulatorRegresi
         public static string DoubleArrayToString(double[] arr)
         {
             string text = "";
-            foreach (var item in arr)
+            for(int i = 0; i < arr.Length; i++)
             {
-                text += Convert.ToString(item);
-                text += " ";
+                text += Convert.ToString(arr[i]);
+                if (i < arr.Length - 1) text += " ";
             }
 
             return text;

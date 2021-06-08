@@ -9,7 +9,6 @@ namespace KalkulatorRegresi
     [Table("InputHistory")]
     public partial class InputHistory
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int UserId { get; set; }
@@ -19,7 +18,7 @@ namespace KalkulatorRegresi
         public string X { get; set; }
 
         [Required]
-        [StringLength(1014)]
+        [StringLength(1024)]
         public string Y { get; set; }
 
         public virtual User User { get; set; }

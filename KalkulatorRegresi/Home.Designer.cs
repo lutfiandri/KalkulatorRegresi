@@ -38,7 +38,6 @@ namespace KalkulatorRegresi
             this.radio_Linear = new System.Windows.Forms.RadioButton();
             this.radio_Power = new System.Windows.Forms.RadioButton();
             this.radio_Exp = new System.Windows.Forms.RadioButton();
-            this.radio_Poly1 = new System.Windows.Forms.RadioButton();
             this.radio_Poly2 = new System.Windows.Forms.RadioButton();
             this.radio_Poly3 = new System.Windows.Forms.RadioButton();
             this.btn_Hitung = new System.Windows.Forms.Button();
@@ -85,7 +84,7 @@ namespace KalkulatorRegresi
             this.tb_X.Location = new System.Drawing.Point(21, 77);
             this.tb_X.Multiline = true;
             this.tb_X.Name = "tb_X";
-            this.tb_X.Size = new System.Drawing.Size(79, 258);
+            this.tb_X.Size = new System.Drawing.Size(79, 317);
             this.tb_X.TabIndex = 3;
             // 
             // tb_Y
@@ -93,7 +92,7 @@ namespace KalkulatorRegresi
             this.tb_Y.Location = new System.Drawing.Point(114, 77);
             this.tb_Y.Multiline = true;
             this.tb_Y.Name = "tb_Y";
-            this.tb_Y.Size = new System.Drawing.Size(79, 258);
+            this.tb_Y.Size = new System.Drawing.Size(79, 317);
             this.tb_Y.TabIndex = 4;
             // 
             // label4
@@ -137,20 +136,10 @@ namespace KalkulatorRegresi
             this.radio_Exp.Text = "Regresi Eksponensial --- y = ae^(bx)";
             this.radio_Exp.UseVisualStyleBackColor = true;
             // 
-            // radio_Poly1
-            // 
-            this.radio_Poly1.AutoSize = true;
-            this.radio_Poly1.Location = new System.Drawing.Point(219, 165);
-            this.radio_Poly1.Name = "radio_Poly1";
-            this.radio_Poly1.Size = new System.Drawing.Size(253, 19);
-            this.radio_Poly1.TabIndex = 9;
-            this.radio_Poly1.Text = "Regresi Polinomial Orde 1 --- y = a0 + a1x";
-            this.radio_Poly1.UseVisualStyleBackColor = true;
-            // 
             // radio_Poly2
             // 
             this.radio_Poly2.AutoSize = true;
-            this.radio_Poly2.Location = new System.Drawing.Point(219, 191);
+            this.radio_Poly2.Location = new System.Drawing.Point(219, 164);
             this.radio_Poly2.Name = "radio_Poly2";
             this.radio_Poly2.Size = new System.Drawing.Size(299, 19);
             this.radio_Poly2.TabIndex = 10;
@@ -160,7 +149,7 @@ namespace KalkulatorRegresi
             // radio_Poly3
             // 
             this.radio_Poly3.AutoSize = true;
-            this.radio_Poly3.Location = new System.Drawing.Point(219, 217);
+            this.radio_Poly3.Location = new System.Drawing.Point(219, 189);
             this.radio_Poly3.Name = "radio_Poly3";
             this.radio_Poly3.Size = new System.Drawing.Size(345, 19);
             this.radio_Poly3.TabIndex = 11;
@@ -169,7 +158,7 @@ namespace KalkulatorRegresi
             // 
             // btn_Hitung
             // 
-            this.btn_Hitung.Location = new System.Drawing.Point(219, 246);
+            this.btn_Hitung.Location = new System.Drawing.Point(219, 214);
             this.btn_Hitung.Name = "btn_Hitung";
             this.btn_Hitung.Size = new System.Drawing.Size(171, 33);
             this.btn_Hitung.TabIndex = 12;
@@ -180,7 +169,7 @@ namespace KalkulatorRegresi
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(216, 293);
+            this.label5.Location = new System.Drawing.Point(216, 254);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 15);
             this.label5.TabIndex = 13;
@@ -189,7 +178,7 @@ namespace KalkulatorRegresi
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(216, 317);
+            this.label6.Location = new System.Drawing.Point(216, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 15);
             this.label6.TabIndex = 14;
@@ -198,7 +187,7 @@ namespace KalkulatorRegresi
             // label_Persamaan
             // 
             this.label_Persamaan.AutoSize = true;
-            this.label_Persamaan.Location = new System.Drawing.Point(359, 293);
+            this.label_Persamaan.Location = new System.Drawing.Point(359, 254);
             this.label_Persamaan.Name = "label_Persamaan";
             this.label_Persamaan.Size = new System.Drawing.Size(11, 15);
             this.label_Persamaan.TabIndex = 15;
@@ -207,7 +196,7 @@ namespace KalkulatorRegresi
             // label_Koef
             // 
             this.label_Koef.AutoSize = true;
-            this.label_Koef.Location = new System.Drawing.Point(359, 317);
+            this.label_Koef.Location = new System.Drawing.Point(359, 278);
             this.label_Koef.Name = "label_Koef";
             this.label_Koef.Size = new System.Drawing.Size(11, 15);
             this.label_Koef.TabIndex = 16;
@@ -215,7 +204,7 @@ namespace KalkulatorRegresi
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(21, 341);
+            this.btn_Save.Location = new System.Drawing.Point(219, 339);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(172, 24);
             this.btn_Save.TabIndex = 17;
@@ -236,7 +225,7 @@ namespace KalkulatorRegresi
             // 
             // btn_History
             // 
-            this.btn_History.Location = new System.Drawing.Point(21, 371);
+            this.btn_History.Location = new System.Drawing.Point(219, 369);
             this.btn_History.Name = "btn_History";
             this.btn_History.Size = new System.Drawing.Size(172, 23);
             this.btn_History.TabIndex = 19;
@@ -272,7 +261,6 @@ namespace KalkulatorRegresi
             this.Controls.Add(this.btn_Hitung);
             this.Controls.Add(this.radio_Poly3);
             this.Controls.Add(this.radio_Poly2);
-            this.Controls.Add(this.radio_Poly1);
             this.Controls.Add(this.radio_Exp);
             this.Controls.Add(this.radio_Power);
             this.Controls.Add(this.radio_Linear);
@@ -302,7 +290,6 @@ namespace KalkulatorRegresi
         private System.Windows.Forms.RadioButton radio_Linear;
         private System.Windows.Forms.RadioButton radio_Power;
         private System.Windows.Forms.RadioButton radio_Exp;
-        private System.Windows.Forms.RadioButton radio_Poly1;
         private System.Windows.Forms.RadioButton radio_Poly2;
         private System.Windows.Forms.RadioButton radio_Poly3;
         private System.Windows.Forms.Button btn_Hitung;

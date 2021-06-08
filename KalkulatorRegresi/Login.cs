@@ -38,6 +38,11 @@ namespace KalkulatorRegresi
             using(var db = new UserModel())
             {
                 var query = from user in db.Users where user.Username == tb_Username.Text select user;
+                if(query.Count() == 0)
+                {
+                    MessageBox.Show("Username/Password salah q");
+                    return;
+                }
                 foreach(var item in query)
                 {
                     _user = new User()
@@ -49,7 +54,7 @@ namespace KalkulatorRegresi
                 }
             }
 
-            if(_user.Password == tb_Password.Text)
+            if (_user.Password == tb_Password.Text)
             {
                 home = new Home(_user);
                 home.ShowDialog();
@@ -57,6 +62,7 @@ namespace KalkulatorRegresi
             else
             {
                 MessageBox.Show("Username/Password salah");
+                return;
             }
 
         }
