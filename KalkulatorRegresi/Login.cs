@@ -60,5 +60,18 @@ namespace KalkulatorRegresi
             }
 
         }
+
+        private void btn_LoginAsAnonymous_Click(object sender, EventArgs e)
+        {
+            _user = new User()
+            {
+                Id = -1,
+                Username = "Anonim",
+                Password = ""
+            };
+
+            home = new Home(_user, true);
+            home.ShowDialog();
+        }
     }
 }

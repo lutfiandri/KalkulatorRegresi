@@ -14,12 +14,14 @@ namespace KalkulatorRegresi
     public partial class Home : Form
     {
         private readonly User user;
+        private readonly bool isAnonymous;
         private Input input;
         private History history;
 
-        public Home(User user)
+        public Home(User user, bool isAnonymous=false)
         {
             this.user = user;
+            this.isAnonymous = isAnonymous;
             InitializeComponent();
         }
 
@@ -103,6 +105,11 @@ namespace KalkulatorRegresi
 
         private void Home_Load(object sender, EventArgs e)
         {
+            if(isAnonymous)
+            {
+                btn_Save.Enabled = false;
+                btn_History.Enabled = false;
+            }
             label_LoggedInAs.Text = $"Masuk Sebagai : {user.Username}";
         }
 

@@ -130,6 +130,7 @@ namespace KalkulatorRegresi
             this.btn_LoginAsAnonymous.TabIndex = 11;
             this.btn_LoginAsAnonymous.Text = "Login sebagai Anonim*";
             this.btn_LoginAsAnonymous.UseVisualStyleBackColor = true;
+            this.btn_LoginAsAnonymous.Click += new System.EventHandler(this.btn_LoginAsAnonymous_Click);
             // 
             // label6
             // 
